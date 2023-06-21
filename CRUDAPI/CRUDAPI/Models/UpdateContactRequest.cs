@@ -1,6 +1,6 @@
 ﻿namespace CRUDAPI.Models
 {
-    public class AddContactRequest
+    public class UpdateContactRequest
     {
         public string FullName { get; set; }
         public string Email { get; set; }
