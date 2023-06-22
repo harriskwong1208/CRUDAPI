@@ -21,9 +21,10 @@ namespace CRUDAPI.Controllers
         [HttpGet]
         public async Task<IActionResult> GetContacts()
         {
-            return Ok(dbContext.Contacts.ToListAsync());
+            return Ok(await dbContext.Contacts.ToListAsync());
            
         }
+
         [HttpGet]
         [Route("{id:guid}")]
         public async Task<IActionResult> GetContact([FromRoute] Guid id)
