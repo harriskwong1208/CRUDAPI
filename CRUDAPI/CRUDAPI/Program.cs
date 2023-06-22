@@ -9,7 +9,11 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<CRUDAPIDbContext>(options => options.UseInMemoryDatabase("ContactsDb"));
+//inject database data
+//builder.Services.AddDbContext<CRUDAPIDbContext>(options => options.UseInMemoryDatabase("ContactsDb"));
+builder.Services.AddDbContext<CRUDAPIDbContext>(options => 
+options.UseSqlServer(builder.Configuration.GetConnectionString("CRUDAPIConnectionString")));
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

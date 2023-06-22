@@ -79,7 +79,7 @@ namespace CRUDAPI.Controllers
         }
 
         [HttpDelete]
-        [Route("id:guid")]
+        [Route("{id:guid}")]
         public async Task<IActionResult> DeleteContact([FromRoute] Guid id)
         {
             var contact = await dbContext.Contacts.FindAsync(id);
