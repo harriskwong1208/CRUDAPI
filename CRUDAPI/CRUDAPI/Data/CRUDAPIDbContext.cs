@@ -10,5 +10,6 @@ namespace CRUDAPI.Data
         }
 
         public DbSet<Contact> Contacts { get; set; }
+        public DbSet<ShowDetail> ShowDetails { get; set; }
     }
 }
